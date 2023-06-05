@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.HourUpDown = new System.Windows.Forms.NumericUpDown();
             this.MinuteUpDown = new System.Windows.Forms.NumericUpDown();
@@ -37,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.HourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinuteUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondUpDown)).BeginInit();
@@ -44,12 +46,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(242, 242);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(249, 225);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 49);
             this.button1.TabIndex = 0;
             this.button1.Text = "Set Timer";
+            this.ToolTip1.SetToolTip(this.button1, "Set a timer based on the specified parameters.");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.createTimer);
             // 
@@ -57,8 +60,8 @@
             // 
             this.HourUpDown.AccessibleName = "";
             this.HourUpDown.AllowDrop = true;
-            this.HourUpDown.Location = new System.Drawing.Point(95, 89);
-            this.HourUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HourUpDown.Location = new System.Drawing.Point(85, 71);
+            this.HourUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.HourUpDown.Maximum = new decimal(new int[] {
             24,
             0,
@@ -71,8 +74,8 @@
             // 
             // MinuteUpDown
             // 
-            this.MinuteUpDown.Location = new System.Drawing.Point(95, 137);
-            this.MinuteUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinuteUpDown.Location = new System.Drawing.Point(85, 119);
+            this.MinuteUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.MinuteUpDown.Maximum = new decimal(new int[] {
             60,
             0,
@@ -84,8 +87,8 @@
             // 
             // SecondUpDown
             // 
-            this.SecondUpDown.Location = new System.Drawing.Point(95, 183);
-            this.SecondUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SecondUpDown.Location = new System.Drawing.Point(85, 165);
+            this.SecondUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.SecondUpDown.Maximum = new decimal(new int[] {
             60,
             0,
@@ -97,19 +100,20 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(38, 242);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(36, 225);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(196, 49);
             this.button2.TabIndex = 6;
             this.button2.Text = "Kill Timer";
+            this.ToolTip1.SetToolTip(this.button2, "Kill any existing timers.");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.killTimer);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 69);
+            this.label1.Location = new System.Drawing.Point(81, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 16);
@@ -120,7 +124,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(91, 117);
+            this.label2.Location = new System.Drawing.Point(81, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
@@ -130,7 +134,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 165);
+            this.label3.Location = new System.Drawing.Point(81, 147);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
@@ -140,14 +144,19 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(286, 139);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Location = new System.Drawing.Point(276, 121);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(72, 20);
             this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "Restart";
+            this.ToolTip1.SetToolTip(this.checkBox1, "When checked, the system will restart rather than shutdown.");
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // ToolTip1
+            // 
+            this.ToolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // Form1
             // 
@@ -164,9 +173,9 @@
             this.Controls.Add(this.HourUpDown);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "TimerUtility";
+            this.Text = "Shutdown Timer";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HourUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinuteUpDown)).EndInit();
@@ -187,6 +196,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolTip ToolTip1;
     }
 }
 

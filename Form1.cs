@@ -78,6 +78,9 @@ namespace ShutdownTimer
 
         }
 
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
 
+        }
     }
 }
