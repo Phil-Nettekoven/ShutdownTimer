@@ -37,8 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.radioButtonShutdown = new System.Windows.Forms.RadioButton();
+            this.radioButtonRestart = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.HourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinuteUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondUpDown)).BeginInit();
@@ -60,7 +61,7 @@
             // 
             this.HourUpDown.AccessibleName = "";
             this.HourUpDown.AllowDrop = true;
-            this.HourUpDown.Location = new System.Drawing.Point(85, 71);
+            this.HourUpDown.Location = new System.Drawing.Point(56, 83);
             this.HourUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.HourUpDown.Maximum = new decimal(new int[] {
             24,
@@ -74,7 +75,7 @@
             // 
             // MinuteUpDown
             // 
-            this.MinuteUpDown.Location = new System.Drawing.Point(85, 119);
+            this.MinuteUpDown.Location = new System.Drawing.Point(56, 131);
             this.MinuteUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.MinuteUpDown.Maximum = new decimal(new int[] {
             60,
@@ -87,7 +88,7 @@
             // 
             // SecondUpDown
             // 
-            this.SecondUpDown.Location = new System.Drawing.Point(85, 165);
+            this.SecondUpDown.Location = new System.Drawing.Point(56, 177);
             this.SecondUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.SecondUpDown.Maximum = new decimal(new int[] {
             60,
@@ -113,7 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 51);
+            this.label1.Location = new System.Drawing.Point(52, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 16);
@@ -124,7 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 99);
+            this.label2.Location = new System.Drawing.Point(52, 111);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
@@ -134,36 +135,48 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 147);
+            this.label3.Location = new System.Drawing.Point(52, 159);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Seconds";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(276, 121);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 20);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Restart";
-            this.ToolTip1.SetToolTip(this.checkBox1, "When checked, the system will restart rather than shutdown.");
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // ToolTip1
             // 
             this.ToolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // radioButtonShutdown
+            // 
+            this.radioButtonShutdown.AutoSize = true;
+            this.radioButtonShutdown.Checked = true;
+            this.radioButtonShutdown.Location = new System.Drawing.Point(300, 119);
+            this.radioButtonShutdown.Name = "radioButtonShutdown";
+            this.radioButtonShutdown.Size = new System.Drawing.Size(86, 20);
+            this.radioButtonShutdown.TabIndex = 11;
+            this.radioButtonShutdown.TabStop = true;
+            this.radioButtonShutdown.Text = "Shutdown";
+            this.radioButtonShutdown.UseVisualStyleBackColor = true;
+            this.radioButtonShutdown.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButtonRestart
+            // 
+            this.radioButtonRestart.AutoSize = true;
+            this.radioButtonRestart.Location = new System.Drawing.Point(300, 146);
+            this.radioButtonRestart.Name = "radioButtonRestart";
+            this.radioButtonRestart.Size = new System.Drawing.Size(71, 20);
+            this.radioButtonRestart.TabIndex = 12;
+            this.radioButtonRestart.Text = "Restart";
+            this.radioButtonRestart.UseVisualStyleBackColor = true;
+            this.radioButtonRestart.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 338);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.radioButtonRestart);
+            this.Controls.Add(this.radioButtonShutdown);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -195,8 +208,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolTip ToolTip1;
+        private System.Windows.Forms.RadioButton radioButtonShutdown;
+        private System.Windows.Forms.RadioButton radioButtonRestart;
     }
 }
 

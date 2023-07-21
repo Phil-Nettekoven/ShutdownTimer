@@ -32,24 +32,29 @@ namespace ShutdownTimer
             int shutdownTime = (int)HourUpDown.Value * HOUR;
             shutdownTime += (int)MinuteUpDown.Value * MINUTE;
             shutdownTime += (int)SecondUpDown.Value;
-            string message;
+            string message = "";
             if (shutdownTime < 60)
             {
                 string warning = "You've entered a time less than one minute. \nAre you sure?";
-                string header = "Warning";
+                string header = "Warning"+" "+radioButtonShutdown.Checked;
                 var result = MessageBox.Show(warning, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.No) { return; }
             }
 
-            if (checkBox1.Checked){
-                message = "-r -t ";
+            if (radioButtonShutdown.Checked){
+                message += "-s -t ";
+            }
+            else if (radioButtonRestart.Checked)
+            {
+                message += "-r -t ";
             }
             else
             {
-                message = "-s -t ";
+                MessageBox.Show("error message haha");
             }
 
             message += shutdownTime.ToString();
+            
             System.Diagnostics.Process.Start("shutdown.exe", message);
         }
 
@@ -79,6 +84,31 @@ namespace ShutdownTimer
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
 
         }
